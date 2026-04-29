@@ -1,78 +1,64 @@
-/* Import font chữ hiện đại từ Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap');
 
 body {
     margin: 0;
     padding: 0;
     font-family: 'Quicksand', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
+    background-color: #f8f9fa; /* Màu nền dự phòng */
 }
 
 .hero {
+    width: 100%;
     min-height: 100vh;
-    /* Thay 'nen.jpg' bằng đúng tên file ảnh ngang bạn đã upload */
+    /* Cấu hình ảnh nền chuẩn xác */
     background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
                       url('nen.jpg'); 
-    
-    /* Cấu hình quan trọng để ép ảnh hiển thị ngang */
-    background-size: 100% auto; /* Ép chiều ngang ảnh bằng 100% màn hình, chiều dọc tự động */
     background-repeat: no-repeat;
-    background-position: top center; /* Giữ ảnh nằm ở phía trên cùng */
-    background-attachment: scroll;
+    background-size: cover; /* Dùng cover để lấp đầy nhưng sẽ ưu tiên chiều ngang */
+    background-position: center top; /* Giữ ảnh cố định ở tâm phía trên */
     
-    background-color: #fff; /* Màu nền trắng cho phần trống phía dưới */
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Đẩy nội dung lên phía trên để khớp với ảnh */
-    padding-top: 100px; /* Chỉnh khoảng cách chữ so với đỉnh ảnh */
+    justify-content: flex-start;
+    padding-top: 10vh; /* Đẩy nội dung xuống một chút để thấy mặt ảnh */
     text-align: center;
-}
-
-.title {
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: #444;
-    margin-bottom: 40px;
-    font-weight: 700;
 }
 
 #countdown {
     display: flex;
     gap: 15px;
     justify-content: center;
+    margin: 30px 0;
 }
 
 .time-box {
-    background: #ffffff;
-    padding: 25px 15px;
+    background: rgba(255, 255, 255, 0.95); /* Ô trắng rõ hơn để nổi bật trên ảnh */
+    padding: 20px 15px;
     border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    min-width: 90px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    min-width: 80px;
 }
 
-/* Kiểu dáng cho con số giống mẫu */
 .time-box span {
-    font-family: 'Montserrat', sans-serif; /* Font chữ số hiện đại, đậm */
+    font-family: 'Montserrat', sans-serif;
     font-size: 2.5rem;
     font-weight: 700;
-    color: #d4a373; /* Màu vàng đồng giống mẫu */
-    line-height: 1;
-    margin-bottom: 10px;
+    color: #d4a373;
+    display: block;
 }
 
-/* Kiểu dáng cho chữ Ngày, Giờ, Phút, Giây */
 .time-box p {
-    margin: 0;
+    margin: 5px 0 0;
     font-size: 0.9rem;
     color: #888;
-    font-weight: 500;
+}
+
+/* Thêm hiệu ứng cho tiêu đề dễ đọc hơn trên nền ảnh */
+.title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
+    margin-bottom: 10px;
 }
