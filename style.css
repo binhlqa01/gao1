@@ -14,18 +14,23 @@ body {
 
 .hero {
     min-height: 100vh;
-    /* Thay 'nen.jpg' bằng tên file ảnh ngang của bạn */
-    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
-                url('nen.jpg'); 
-    background-size: contain; /* Thay 'cover' bằng 'contain' để hiện hết chiều ngang ảnh */
+    /* Thay 'nen.jpg' bằng đúng tên file ảnh ngang bạn đã upload */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
+                      url('nen.jpg'); 
+    
+    /* Cấu hình quan trọng để ép ảnh hiển thị ngang */
+    background-size: 100% auto; /* Ép chiều ngang ảnh bằng 100% màn hình, chiều dọc tự động */
     background-repeat: no-repeat;
-    background-position: center;
-    background-color: #fff; /* Màu nền trắng cho các phần trống */
+    background-position: top center; /* Giữ ảnh nằm ở phía trên cùng */
+    background-attachment: scroll;
+    
+    background-color: #fff; /* Màu nền trắng cho phần trống phía dưới */
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* Đẩy nội dung lên phía trên để khớp với ảnh */
+    padding-top: 100px; /* Chỉnh khoảng cách chữ so với đỉnh ảnh */
     text-align: center;
-    padding: 20px 0;
 }
 
 .title {
