@@ -1,109 +1,47 @@
-/* Import font chữ số cách điệu và hiện đại */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@800&family=Dancing+Script:wght@700&display=swap');
-
-.hero {
-    min-height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
-                url('background.jpg'); 
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-/* Tiêu đề cách điệu hơn */
-.title {
-    font-family: 'Dancing Script', cursive;
-    font-size: 4.5rem; /* To hơn */
-    color: #fff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-    margin-bottom: 5px;
-}
-
-.subtitle {
-    font-size: 1.3rem;
-    color: #fff;
-    font-weight: 500;
-    margin-bottom: 40px;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-}
-
-#countdown {
-    display: flex;
-    gap: 20px;
-}
-
-.time-box {
-    background: rgba(255, 255, 255, 0.95);
-    padding: 30px 20px; /* Tăng độ rộng ô */
-    border-radius: 20px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    min-width: 100px;
-    border: 1px solid rgba(212, 163, 115, 0.3);
-}
-
-/* Chỉnh số to, đậm và cách điệu */
-.time-box span {
-    font-family: 'Montserrat', sans-serif; /* Font số dày và hiện đại */
-    font-size: 3.5rem; /* Tăng kích thước số đáng kể */
-    font-weight: 800;
-    color: #d4a373; 
-    display: block;
-    line-height: 1;
-    margin-bottom: 10px;
-    /* Hiệu ứng đổ bóng cho số nhẹ nhàng */
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
-}
-
-.time-box p {
-    margin: 0;
-    font-size: 1rem;
-    color: #888;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Lời nhắn bên dưới */
-.message {
-    margin-top: 40px;
-    color: #fff;
-    font-size: 1.2rem;
-    font-style: italic;
-    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
-}
-/* --- PHẦN TÙY BIẾN CHO ĐIỆN THOẠI --- */
 @media screen and (max-width: 600px) {
     .hero {
-        /* Ép ảnh ngang lấp đầy chiều cao điện thoại mà không bị méo */
-        background-size: cover !important; 
-        
-        /* Căn chính giữa ảnh để lấy phần nội dung quan trọng nhất */
-        background-position: center center !important; 
-        
-        /* Tắt hiệu ứng cố định ảnh (fixed) để tránh lag trên mobile */
+        padding: 40px 10px !important;
         background-attachment: scroll !important;
-        
-        padding-top: 40px;
     }
 
     .title {
-        font-size: 2.5rem !important; /* Thu nhỏ tiêu đề */
+        font-size: 2.2rem !important; /* Giảm cỡ chữ tiêu đề */
+        margin-bottom: 10px !important;
+    }
+
+    .subtitle {
+        font-size: 1rem !important;
+        margin-bottom: 25px !important;
     }
 
     #countdown {
-        /* Chuyển các ô số thành 2 hàng để không bị tràn màn hình */
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-        padding: 0 20px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px !important; /* Tạo khoảng cách giữa các ô */
+        max-width: 320px; /* Giới hạn độ rộng để không tràn lề */
+        margin: 0 auto !important;
     }
 
     .time-box {
-        min-width: unset !important;
-        width: 100%;
+        padding: 15px 10px !important; /* Thu nhỏ ô lại một chút */
+        border-radius: 15px !important;
+    }
+
+    .time-box span {
+        font-size: 2.2rem !important; /* Chỉnh số vừa vặn hơn */
+    }
+
+    .message {
+        font-size: 0.9rem !important;
+        padding: 0 15px;
+        line-height: 1.5;
+    }
+
+    /* Đẩy nút nhạc xuống góc hoặc chỉnh kích thước */
+    #music-control {
+        bottom: 15px !important;
+        right: 15px !important;
+        padding: 8px !important;
+        font-size: 18px !important;
     }
 }
