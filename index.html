@@ -30,4 +30,13 @@
     </div>
     <script src="script.js"></script>
 </body>
+<!-- Trình phát nhạc ẩn -->
+<audio id="bg-music" loop>
+    <source src="nhac.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Nút bật/tắt nhạc cố định ở góc màn hình -->
+<div id="music-control" onclick="toggleMusic()" style="position: fixed; bottom: 20px; right: 20px; z-index: 1000; cursor: pointer; background: rgba(255,255,255,0.9); padding: 12px; border-radius: 50%; box-shadow: 0 4px 15px rgba(0,0,0,0.2); font-size: 24px;">
+    <span id="music-icon">🎵</span>
+</div>
 </html>
