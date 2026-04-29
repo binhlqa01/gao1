@@ -1,128 +1,80 @@
-/* --- CẤU HÌNH CHUNG --- */
+/* --- CẤU HÌNH FONT & NỀN --- */
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&family=Montserrat:wght@800&display=swap');
 
 body, html {
     margin: 0;
     padding: 0;
-    font-family: 'Quicksand', sans-serif; /* Font chữ mặc định cho trang */
-    overflow-x: hidden; /* Ngăn chặn cuộn ngang trên mobile */
-    background-color: #f8f9fa; /* Màu nền dự phòng */
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+    background-color: #000; /* Nền đen để video load mượt hơn */
 }
 
-.container {
-    width: 100%;
-    max-width: 1200px; /* Giới hạn độ rộng trên màn hình máy tính */
-    margin: 0 auto;
-    padding: 0 15px;
-    box-sizing: border-box;
+/* Video nền động tràn màn hình */
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
 }
 
+/* Lớp phủ để chữ dễ đọc hơn trên video */
 .hero {
     min-height: 100vh;
-    width: 100%;
-    
-    /* Ép ảnh ngang lấp đầy chiều cao nhưng căn giữa để không bị méo */
-    background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), 
-                      url('background.jpg'); 
-    background-size: cover; /* Phóng to để phủ kín, có thể cắt bớt hai bên */
-    background-position: center center; /* Luôn lấy phần trung tâm tấm ảnh */
-    background-attachment: scroll; /* Tắt fixed để mượt trên mobile */
-    
+    background: rgba(0, 0, 0, 0.25); /* Tối hơn một chút để nổi bật font Montserrat */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 40px 0;
 }
 
-/* --- ĐIỀU CHỈNH FONT CHỮ --- */
-.title {
-    font-family: 'Dancing Script', cursive !important; /* Ép font cách điệu cho tiêu đề */
-    font-size: calc(1.8rem + 1.5vw) !important; /* Chữ tự co giãn */
-    color: #444; /* Màu chữ tiêu đề */
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-    margin-bottom: 5px !important;
-}
-
-.subtitle {
-    font-size: 1rem !important;
-    color: #444;
-    font-weight: 500;
-    margin-bottom: 25px !important;
-    text-shadow: 1px 1px 3px rgba(255,255,255,0.8);
-}
-
-/* --- ĐIỀU CHỈNH Ô SỐ (COUNTDOWN) --- */
+/* --- COUNTDOWN CÁCH ĐIỆU (GLASSMORPHISM) --- */
 #countdown {
-    display: grid !important; /* Dùng lưới 2x2 cho cả PC và Mobile */
+    display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 15px !important;
     padding: 0 20px;
-    max-width: 100%;
+    margin: 20px 0;
 }
 
 .time-box {
-    /* Hiệu ứng ô số trong suốt, nền mờ (Glassmorphism) */
     background: rgba(255, 255, 255, 0.7); 
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    
-    padding: 15px 10px !important;
-    border-radius: 15px !important;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 15px 10px;
+    border-radius: 15px;
     border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .time-box span {
-    font-family: 'Montserrat', sans-serif !important; /* Font chữ số cách điệu trên iPhone */
-    font-size: 2.5rem !important;
+    font-family: 'Montserrat', sans-serif !important;
+    font-size: 2.8rem !important; /* To và rõ cho iPhone */
     font-weight: 800;
-    color: #d4a373; /* Màu vàng đồng */
+    color: #d4a373;
     display: block;
     line-height: 1;
-    margin-bottom: 10px;
 }
 
-.time-box p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #888;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+.title {
+    font-family: 'Dancing Script', cursive !important;
+    font-size: 3rem;
+    color: white;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
 }
 
-/* --- LỜI NHẮN VÀ NÚT NHẠC --- */
-.message {
-    margin-top: 30px;
-    color: #444;
-    font-size: 1.1rem;
-    font-style: italic;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-    padding: 0 20px;
-}
-
-#music-control {
-    bottom: 20px !important;
-    right: 20px !important;
-    padding: 12px !important;
-    font-size: 24px !important;
-    background: rgba(255,255,255,0.9) !important;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2) !important;
-}
-
-/* --- TỐI ƯU CHO ĐIỆN THOẠI (Dưới 768px) --- */
+/* --- RESPONSIVE CHO IPHONE --- */
 @media screen and (max-width: 768px) {
     .title {
-        font-size: 2.2rem !important; /* Chỉnh tiêu đề vừa vặn trên điện thoại */
+        font-size: 2.2rem !important;
     }
-
-    #countdown {
-        gap: 12px !important; /* Giảm khoảng cách ô số trên màn hình hẹp */
-    }
-
     .time-box span {
-        font-size: 2.2rem !important; /* Chỉnh số vừa vặn hơn trên mobile */
+        font-size: 2.2rem !important;
+    }
+    #myVideo {
+        object-position: center; /* Giữ trung tâm video trên màn hình dọc */
     }
 }
