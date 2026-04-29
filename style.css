@@ -13,16 +13,19 @@ body {
 }
 
 .hero {
-    height: 100vh;
-    /* Thay 'nen.jpg' bằng đúng tên file ảnh bạn đã upload */
-    background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
-                url('background.jpg'); 
-    background-size: cover;
+    min-height: 100vh;
+    /* Thay 'nen.jpg' bằng tên file ảnh ngang của bạn */
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
+                url('nen.jpg'); 
+    background-size: contain; /* Thay 'cover' bằng 'contain' để hiện hết chiều ngang ảnh */
+    background-repeat: no-repeat;
     background-position: center;
+    background-color: #fff; /* Màu nền trắng cho các phần trống */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    padding: 20px 0;
 }
 
 .title {
