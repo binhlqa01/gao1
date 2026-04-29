@@ -75,3 +75,35 @@
     font-style: italic;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
+/* --- PHẦN TÙY BIẾN CHO ĐIỆN THOẠI --- */
+@media screen and (max-width: 600px) {
+    .hero {
+        /* Ép ảnh ngang lấp đầy chiều cao điện thoại mà không bị méo */
+        background-size: cover !important; 
+        
+        /* Căn chính giữa ảnh để lấy phần nội dung quan trọng nhất */
+        background-position: center center !important; 
+        
+        /* Tắt hiệu ứng cố định ảnh (fixed) để tránh lag trên mobile */
+        background-attachment: scroll !important;
+        
+        padding-top: 40px;
+    }
+
+    .title {
+        font-size: 2.5rem !important; /* Thu nhỏ tiêu đề */
+    }
+
+    #countdown {
+        /* Chuyển các ô số thành 2 hàng để không bị tràn màn hình */
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .time-box {
+        min-width: unset !important;
+        width: 100%;
+    }
+}
