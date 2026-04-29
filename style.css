@@ -16,7 +16,7 @@ body {
     height: 100vh;
     /* Thay 'nen.jpg' bằng đúng tên file ảnh bạn đã upload */
     background: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), 
-                url('nen.jpg'); 
+                url('background.jpg'); 
     background-size: cover;
     background-position: center;
     display: flex;
