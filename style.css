@@ -75,6 +75,13 @@ body, html {
         font-size: 2.2rem !important;
     }
     #myVideo {
-        object-position: center; /* Giữ trung tâm video trên màn hình dọc */
-    }
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -1;
+    object-fit: cover;
+    background-size: cover;
+}
 }
