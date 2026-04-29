@@ -12,7 +12,7 @@ body {
     min-height: 100vh;
     /* Cấu hình ảnh nền chuẩn xác */
     background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
-                      url('nen.jpg'); 
+                      url(https://github.com/binhlqa01/gao1/blob/main/background.jpg?raw=true); 
     background-repeat: no-repeat;
     background-size: cover; /* Dùng cover để lấp đầy nhưng sẽ ưu tiên chiều ngang */
     background-position: center top; /* Giữ ảnh cố định ở tâm phía trên */
