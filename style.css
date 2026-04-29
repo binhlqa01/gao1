@@ -1,18 +1,61 @@
-body { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; background-color: #fff9f0; overflow: hidden; }
-.hero { height: 100vh; background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
-.title { font-family: 'Dancing Script', cursive; font-size: 4rem; color: #d4a373; margin-bottom: 10px; }
-.subtitle { font-size: 1.2rem; color: #6d6875; }
+/* Import font chữ hiện đại từ Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.hero {
+    text-align: center;
+}
+
+.title {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #444;
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
 #countdown {
     display: flex;
+    gap: 15px;
     justify-content: center;
-    gap: 10px; /* Khoảng cách giữa các ô nhỏ lại một chút */
-    flex-wrap: wrap; /* Tự xuống dòng nếu màn hình điện thoại quá nhỏ */
-    margin: 30px 0;
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 10px 15px; /* Giảm padding một chút */
+    background: #ffffff;
+    padding: 25px 15px;
     border-radius: 15px;
-    min-width: 60px; /* Độ rộng tối thiểu vừa đủ */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Kiểu dáng cho con số giống mẫu */
+.time-box span {
+    font-family: 'Montserrat', sans-serif; /* Font chữ số hiện đại, đậm */
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #d4a373; /* Màu vàng đồng giống mẫu */
+    line-height: 1;
+    margin-bottom: 10px;
+}
+
+/* Kiểu dáng cho chữ Ngày, Giờ, Phút, Giây */
+.time-box p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #888;
+    font-weight: 500;
 }
