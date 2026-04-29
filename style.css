@@ -1,47 +1,71 @@
-@media screen and (max-width: 600px) {
+/* --- CẤU HÌNH CHUNG --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+.hero {
+    min-height: 100vh;
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), 
+                url('background.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Hiệu ứng ô số trong suốt sang trọng */
+.time-box {
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 25px 20px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    min-width: 110px;
+}
+
+.time-box span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 800;
+    color: #d4a373;
+    display: block;
+}
+
+/* --- TỐI ƯU RIÊNG CHO ĐIỆN THOẠI (Dưới 768px) --- */
+@media screen and (max-width: 768px) {
     .hero {
-        padding: 40px 10px !important;
-        background-attachment: scroll !important;
+        background-attachment: scroll; /* Tắt fixed để mượt trên mobile */
+        padding: 20px 0;
     }
 
     .title {
-        font-size: 2.2rem !important; /* Giảm cỡ chữ tiêu đề */
-        margin-bottom: 10px !important;
-    }
-
-    .subtitle {
-        font-size: 1rem !important;
-        margin-bottom: 25px !important;
+        font-size: 2.5rem !important;
+        padding: 0 10px;
     }
 
     #countdown {
         display: grid !important;
-        grid-template-columns: repeat(2, 1fr) !important;
-        gap: 12px !important; /* Tạo khoảng cách giữa các ô */
-        max-width: 320px; /* Giới hạn độ rộng để không tràn lề */
-        margin: 0 auto !important;
+        grid-template-columns: repeat(2, 1fr); /* Chia 2 cột đều nhau */
+        gap: 15px;
+        padding: 0 20px;
+        max-width: 100%;
     }
 
     .time-box {
-        padding: 15px 10px !important; /* Thu nhỏ ô lại một chút */
-        border-radius: 15px !important;
+        min-width: unset !important;
+        padding: 15px 10px;
     }
 
     .time-box span {
-        font-size: 2.2rem !important; /* Chỉnh số vừa vặn hơn */
-    }
-
-    .message {
-        font-size: 0.9rem !important;
-        padding: 0 15px;
-        line-height: 1.5;
-    }
-
-    /* Đẩy nút nhạc xuống góc hoặc chỉnh kích thước */
-    #music-control {
-        bottom: 15px !important;
-        right: 15px !important;
-        padding: 8px !important;
-        font-size: 18px !important;
+        font-size: 2.2rem !important;
     }
 }
