@@ -1,64 +1,77 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Quicksand:wght@500&display=swap');
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Quicksand', sans-serif;
-    background-color: #f8f9fa; /* Màu nền dự phòng */
-}
+/* Import font chữ số cách điệu và hiện đại */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@800&family=Dancing+Script:wght@700&display=swap');
 
 .hero {
-    width: 100%;
     min-height: 100vh;
-    /* Cấu hình ảnh nền chuẩn xác */
-    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), 
-                      url(https://github.com/binhlqa01/gao1/blob/main/background.jpg?raw=true); 
-    background-repeat: no-repeat;
-    background-size: cover; /* Dùng cover để lấp đầy nhưng sẽ ưu tiên chiều ngang */
-    background-position: center top; /* Giữ ảnh cố định ở tâm phía trên */
-    
+    background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), 
+                url('nen.jpg'); 
+    background-size: cover;
+    background-position: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding-top: 10vh; /* Đẩy nội dung xuống một chút để thấy mặt ảnh */
+    justify-content: center;
     text-align: center;
+}
+
+/* Tiêu đề cách điệu hơn */
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem; /* To hơn */
+    color: #fff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 500;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
 }
 
 #countdown {
     display: flex;
-    gap: 15px;
-    justify-content: center;
-    margin: 30px 0;
+    gap: 20px;
 }
 
 .time-box {
-    background: rgba(255, 255, 255, 0.95); /* Ô trắng rõ hơn để nổi bật trên ảnh */
-    padding: 20px 15px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    min-width: 80px;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px 20px; /* Tăng độ rộng ô */
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    min-width: 100px;
+    border: 1px solid rgba(212, 163, 115, 0.3);
 }
 
+/* Chỉnh số to, đậm và cách điệu */
 .time-box span {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: #d4a373;
+    font-family: 'Montserrat', sans-serif; /* Font số dày và hiện đại */
+    font-size: 3.5rem; /* Tăng kích thước số đáng kể */
+    font-weight: 800;
+    color: #d4a373; 
     display: block;
+    line-height: 1;
+    margin-bottom: 10px;
+    /* Hiệu ứng đổ bóng cho số nhẹ nhàng */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
 }
 
 .time-box p {
-    margin: 5px 0 0;
-    font-size: 0.9rem;
+    margin: 0;
+    font-size: 1rem;
     color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Thêm hiệu ứng cho tiêu đề dễ đọc hơn trên nền ảnh */
-.title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #444;
-    text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-    margin-bottom: 10px;
+/* Lời nhắn bên dưới */
+.message {
+    margin-top: 40px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-style: italic;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
