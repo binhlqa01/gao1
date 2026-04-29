@@ -1,0 +1,9 @@
+body { margin: 0; padding: 0; font-family: 'Quicksand', sans-serif; background-color: #fff9f0; overflow: hidden; }
+.hero { height: 100vh; background: linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&q=80&w=1920'); background-size: cover; background-position: center; display: flex; align-items: center; justify-content: center; text-align: center; }
+.title { font-family: 'Dancing Script', cursive; font-size: 4rem; color: #d4a373; margin-bottom: 10px; }
+.subtitle { font-size: 1.2rem; color: #6d6875; }
+#countdown { display: flex; justify-content: center; gap: 15px; margin: 30px 0; }
+.time-box { background: rgba(255, 255, 255, 0.9); padding: 15px 20px; border-radius: 20px; box-shadow: 0 10px 20px rgba(212, 163, 115, 0.2); min-width: 70px; }
+.time-box span { font-size: 2rem; font-weight: bold; color: #d4a373; }
+.time-box p { margin: 5px 0 0; font-size: 0.8rem; color: #a5a5a5; }
+.message { font-style: italic; color: #8d99ae; margin-top: 20px; line-height: 1.6; }
