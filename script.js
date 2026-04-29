@@ -16,3 +16,24 @@ setInterval(function() {
     document.getElementById("minutes").innerText = minutes < 10 ? "0" + minutes : minutes;
     document.getElementById("seconds").innerText = seconds < 10 ? "0" + seconds : seconds;
 }, 1000);
+function toggleMusic() {
+    const music = document.getElementById("bg-music");
+    const icon = document.getElementById("music-icon");
+    
+    if (music.paused) {
+        music.play();
+        icon.innerText = "⏸️"; // Đổi icon khi đang phát
+    } else {
+        music.pause();
+        icon.innerText = "🎵"; // Đổi icon khi dừng
+    }
+}
+
+// Tự động phát nhạc ngay khi người dùng chạm vào bất kỳ đâu trên trang web lần đầu
+document.addEventListener('click', function() {
+    const music = document.getElementById("bg-music");
+    if (music.paused) {
+        music.play();
+        document.getElementById("music-icon").innerText = "⏸️";
+    }
+}, { once: true });
